@@ -1,0 +1,1229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="影视歌曲歌手列表,一听音乐网"  />
+<meta name="keywords" content="影视歌曲,免费音乐,在线试听,一听音乐网"  /> 
+<title>全部 影视歌曲 歌手列表 - 一听音乐网</title>
+<link href="/v5/r5/style/common.css" rel="stylesheet" type="text/css"/>
+<link href="/v5/r4/style/group.css" rel="stylesheet" type="text/css"/>
+<script src="/v5/r4/js/jquery.min.js"></script>
+<script src="/v5/r4/js/common.js"></script>
+<script src="/v5/r4/js/group.js"></script>
+<script src="//cpro.baidustatic.com/js/ds.js"></script>
+
+</head>
+<body>
+        <div class="site-nav">
+        <div class="center">
+            <ul class="navlink">
+                <li><a href="http://d.1ting.com/听音乐.url">保存到桌面</a></li>
+                <li><a href="/genre/">曲风</a></li>
+                <li><a href="/rank.html">排行榜</a></li>
+                <li><a href="/archives/">专辑库</a></li>
+            </ul>
+            <!--div class="bshare-custom"><a title="分享到微信" class="bshare-weixin"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div-->
+            <!--div class="sinaweibo_iframe">
+                <iframe width="120" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="https://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=1671108633&style=2&btn=light&dpc=1"></iframe>
+            </div-->
+
+            <!--<ul style="height:19px;width:110px;padding-top:5px;float:left;"><li><a style="color:#333" href="https://h5.1ting.com" title="手机访问一听">手机版:h5.1ting.com</a></li></ul>-->
+            <ul class="siteaction" style="height:24px;padding-top:1px;"> 
+                <li class="favorite" style="margin-top:5px"><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a></li>
+            </ul>
+        </div>
+    </div>
+               <script type="text/javascript" language="javascript">
+                function AddFavorite(sURL, sTitle) {
+                    sURL = encodeURI(sURL); 
+                try{   
+                    window.external.addFavorite(sURL, sTitle);   
+                }catch(e) {   
+                    try{   
+                        window.sidebar.addPanel(sTitle, sURL, "");   
+                    }catch (e) {   
+                        alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+         
+                        }   
+                    }
+                }
+              </script>
+    <!-- /site-nav -->
+    <div class="header center">
+        <div class="logo">
+            <h1>
+                <a href="https://www.1ting.com/?ssl" title="返回一听首页?">一听音乐网</a>
+            </h1>
+        </div>
+        <div class="search">
+            <div class="option_selected" id="search_option_selected">
+                <a href="javascript:void(0);" id="st" target="_self">全部</a>
+            </div>
+            <div class="option_list" id="search_option_list">
+                <ul>
+                    <li class="selected"><a href="javascript:void(0);" target="_self">全部</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌曲</a></li>
+                    <li><a href="javascript:void(0);" target="_self">专辑</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌手</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌词</a></li>
+                </ul>
+            </div>
+            <div class="search_box"><form method="get" action="//so.1ting.com/all.do" onsubmit="return search(this);">
+                <input type="text" name="q" id="sq" x-webkit-speech  x-webkit-grammar="builtin:search" onwebkitspeechchange="(function(e){e.target.form.submit();})(event)" />
+                <button type="submit">搜索</button></form>
+            </div>
+        </div>
+        <div class="userbox">
+            <div class="user-guest" id="user-guest">
+                <p class="sitelogin">
+                    <a href="//my.1ting.com/register" class="link-reg">免费注册</a> -
+                    <a href="//my.1ting.com/login" class="link-login">登录</a>
+                </p>
+                <p class="pluginlogin">
+                    <a href="//my.1ting.com/login/connect/sina" class="login-weibo">微博登录</a>
+                    <a href="//my.1ting.com/login/connect/qq" class="login-qq">QQ登录</a>
+                    <a href="//my.1ting.com/" class="link-favor">我的收藏</a>
+                </p>
+            </div>
+            <div class="user-login" id="user-login">
+                <p class="user-welcome">
+                    <a href="//my.1ting.com/profile" class="link-username" id="username"></a>
+                    <span id="greeting"></span>
+                </p>
+                <div class="user-action" id="user_login_action">
+                    <a href="//my.1ting.com/" class="act-fav">我的收藏</a>
+                    <div style="display: none;">
+                        <a href="//my.1ting.com/" target="_blank">用户中心</a>
+                        <a href="//my.1ting.com/logout">退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        (function(){
+            function cookie(k){
+                var v = "";
+                var s = k+"=",c = document.cookie,l=c.length;
+                if (l > 0) {
+                    var os = c.indexOf(s);
+                    if (os != -1) {
+                        os += s.length;
+                        var ed = c.indexOf(";", os);
+                        if (ed == -1) ed = l;
+                        v = decodeURIComponent(c.substring(os, ed)).replace(/\+/g,' ');
+                    }
+                }
+                return v;
+            }
+            function receive(){
+                var greeting,
+                    hour = new Date().getHours(),
+                    id = cookie('OneId'),
+                    user = cookie('OneNick')||cookie('OneUser');
+                if(hour >= 6 && hour < 12){
+                    greeting='上午好!';
+                }else if(hour>=12 && hour<18){
+                    greeting='下午好!';
+                }else if(hour>=18 && hour<23){
+                    greeting='晚上好!';
+                }else{
+                    greeting='夜深了 请注意休息!';
+                }
+                if(id && /^\d+$/.test(id) && user && /^[^<>\"\']+$/.test(user)){
+                    $('#username').html(user);
+                    $('#greeting').html(greeting);
+                    $('#user-login').show();
+                    $('#user-guest').hide();
+                }else{
+                    $('#user-guest').show();
+                    $('#user-login').hide();
+                }
+            }
+            (function(ctn) {
+                var timeId, time = 500,
+                    slideTime = 200,
+                    child = ctn.children("div"),
+                    upClass = "user-action-arrow-up";
+                ctn.hover(function() {
+                    timeId = setTimeout(function() {
+                        ctn.addClass(upClass);
+                        child.slideDown(slideTime);
+                    }, time);
+                }, function() {
+                    ctn.removeClass(upClass);
+                    clearTimeout(timeId);
+                    child.slideUp(slideTime);
+                });
+            })($("#user_login_action"));
+            receive();
+            setInterval(receive, 3000);
+        })();
+        </script>
+        <div class="nav">
+            <ul class="allcate" id="nav_list">
+                <li><a href="/" target="_self"><span>首页</span></a></li>
+                <li><a href="/group.html" class="has-sub" target="_self"><i style="display:block" target="_self"></i><span>歌手</span></a></li>
+                <li><a href="/archives/" target="_self"><span>专辑</span></a></li>
+                <li><a href="/rank.html" target="_self"><span>排行榜</span></a></li>
+                <li><a href="#" class="has-sub" target="_self"><span>高清MV</span></a></li>
+            </ul>
+            <div class="randplay">
+                <a href="/rand.php">随便一听</a>
+            </div>
+            <div class="nav-category">
+                <a href="/genre" target="_self">曲风分类</a>
+                <!--span>|</span>
+                <a href="/topic" target="_self">专题 &bull; 活动</a-->
+                
+            </div>
+        </div>
+        <div class="nav-secondary" id="nav_secondary">
+            <p style="display:block;">
+                <a href="/group/group0_2.html"><span>华语女歌手</span></a> |
+                <a href="/group/group0_1.html"><span>华语男歌手</span></a> |
+                <a href="/group/group0_3.html"><span>华语组合</span></a> |
+                <a href="/group/group3_15.html"><span>欧美女歌手</span></a> |
+                <a href="/group/group3_14.html"><span>欧美男歌手</span></a> |
+                <a href="/group/group3_16.html"><span>欧美组合</span></a> |
+                <a href="/group/group5_0.html"><span>韩国</span></a> |
+                <a href="/group/group4_0.html"><span>日本</span></a> |
+                <a href="/group/group6_0.html"><span>影视</span></a> |
+                <a href="/group/group7_0.html"><span>其他</span></a> |
+                <span><!--a class="misc" href="/fo/">佛教音乐</a><a href="/prenatal/">胎教/儿歌</a><a href="http://5.1ting.com">广场舞</a><a href="/xiqu/">戏曲</a--><a href="/mv/">高清MV</a></span>
+            </p>
+            <p style="text-align:center;width:736px;">
+                 <a href="/mv/cate/3.html">港台歌手MV</a>  | <a href="/mv/cate/6.html">内地歌手MV</a> | <a href="/mv/cate/2.html">韩国歌手MV</a> | <a href="/mv/cate/5.html">日本歌手MV</a> | <a href="/mv/cate/4.html">欧美歌手MV</a> | <a href="/mv/search?q=演唱会">演唱会视频</a>   
+            </p>
+        </div>
+    </div>
+    <!-- /header -->
+    <script>
+    (function(){
+        var menus = $("#nav_list").find("a.has-sub"),
+            subMenu = $("#nav_secondary");
+        $.each(menus, function(index, ele) {
+            $(ele).mouseover(function() {
+                menus.children("i").hide();
+                $(ele).children("i").show();
+                subMenu.children("p").hide()
+                            .eq(index).show();
+            });
+        });
+        /*var links = [{'name': '明星美图',  'path': 'star'}, 
+                     {'name': '街拍美女',  'path': 'jiepai'}, 
+                     /*{'name': '流行服饰',  'path': 'dress'}, 
+                     {'name': '时尚彩妆',  'path': 'face'}, 
+                     {'name': '潮流发型',  'path': 'tide'}, 
+                     {'name': '清新美女',  'path': 'meinv'}, 
+                     {'name': '车模美女',  'path': 'chemo'},
+                     {'name': '唯美女生',  'path': 'fennen'}, 
+                     {'name': '非主流女生',  'path': 'feizhuliu'}, 
+                     {'name': 'Show Girl',   'path': 'showgirl'}, 
+                     {'name': 'Cosplay女神', 'path': 'cosplay'},
+                     {'name': '婚纱秀欣赏',  'path': 'hunsha'}];
+        setInterval(function(){
+            var d = links[Math.ceil(Math.random()*links.length)-1];
+            $('#picture').attr('href', 'https://ent.1ting.com/pictures/'+d.path).text(d.name);
+        }, 10000);*/
+    })();
+    </script>
+    <a href="javascript:void(0);" class="go-top" id="go_top">返回顶部</a>
+    <div class="center">
+        <div class="group-menu">
+            <div class="group-menu-component">
+                <a href="/group.html" class="group-menu-title">全部歌手</a>
+            </div>
+            <div class="group-menu-component">
+                <a href="#" class="group-menu-title">华语</a>
+                                                    <a href="/group/group0_2.html" class=""><span>华语女歌手</span></a>
+                                    <a href="/group/group0_1.html" class=""><span>华语男歌手</span></a>
+                                    <a href="/group/group0_3.html" class=""><span>华语组合</span></a>
+                            </div>
+            <div class="group-menu-component">
+                <a href="#" class="group-menu-title">欧美</a>
+                                                    <a href="/group/group3_15.html" class=""><span>欧美女歌手</span></a>
+                                    <a href="/group/group3_14.html" class=""><span>欧美男歌手</span></a>
+                                    <a href="/group/group3_16.html" class=""><span>欧美组合</span></a>
+                            </div>
+            <div class="group-menu-component group-menu-component-last">
+                                                    <a href="/group/group5_0.html" class=""><span>韩国</span></a>
+                                    <a href="/group/group4_0.html" class=""><span>日本</span></a>
+                                    <a href="/group/group6_0.html" class="group-menu-current"><span>影视</span></a>
+                                    <a href="/group/group7_0.html" class=""><span>其他</span></a>
+                            </div>
+        </div>
+        <div class="group-content">
+            <div class="pageTitle">
+                                <h2>影视歌曲</h2>
+                <a href="/rand.php?typeID=6" class="randplay" target="_blank"><span>随便听几首</span></a>
+                            </div>
+
+            <div class="singerIndex" id="singerIndex">
+                <p class="initials"><span>索引:</span> <a href="#recommendSinger">推荐</a>
+                                <a href="#YA">A</a>
+                                <a href="#YB">B</a>
+                                <a href="#YC">C</a>
+                                <a href="#YD">D</a>
+                                <a href="#YE">E</a>
+                                <a href="#YF">F</a>
+                                <a href="#YG">G</a>
+                                <a href="#YH">H</a>
+                                <a href="#YI">I</a>
+                                <a href="#YJ">J</a>
+                                <a href="#YK">K</a>
+                                <a href="#YL">L</a>
+                                <a href="#YM">M</a>
+                                <a href="#YN">N</a>
+                                <a href="#YO">O</a>
+                                <a href="#YP">P</a>
+                                <a href="#YQ">Q</a>
+                                <a href="#YR">R</a>
+                                <a href="#YS">S</a>
+                                <a href="#YT">T</a>
+                                <a href="#YU">U</a>
+                                <a href="#YV">V</a>
+                                <a href="#YW">W</a>
+                                <a href="#YX">X</a>
+                                <a href="#YY">Y</a>
+                                <a href="#YZ">Z</a>
+                                <a href="#Y0-9">0-9</a>
+                                </p>
+                                <p class="showhot">
+                    <input type="checkbox" id="onlyshowhot" />
+                    <label for="onlyshowhot">仅显示热门歌手</label>
+                </p>
+                            </div>
+            <a name="recommendSinger" class="anchor"></a>
+            <div class="singerCommend">
+                <!-- u1561984 -->
+                <script type="text/javascript" src="//cpro.baidustatic.com/mhqegqpjd.js"></script>
+                <h3>推荐</h3>
+                <ul>
+                                                            <li><a href="/singer/d8/singer_5339.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_5339.jpg" width="75" height="100" alt="色·戒资料,歌曲和专辑" /></a><a href="/singer/d8/singer_5339.html" class="singerName">色·戒</a></li>
+                                            <li><a href="/singer/02/singer_2710.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_2710.jpg" width="75" height="100" alt="长恨歌资料,歌曲和专辑" /></a><a href="/singer/02/singer_2710.html" class="singerName">长恨歌</a></li>
+                                            <li><a href="/singer/c7/singer_1612.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_1612.jpg" width="75" height="100" alt="灌篮高手资料,歌曲和专辑" /></a><a href="/singer/c7/singer_1612.html" class="singerName">灌篮高手</a></li>
+                                            <li><a href="/singer/f4/singer_4908.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_4908.jpg" width="75" height="100" alt="又见一帘幽梦资料,歌曲和专辑" /></a><a href="/singer/f4/singer_4908.html" class="singerName">又见一帘幽梦</a></li>
+                                            <li><a href="/singer/a5/singer_3884.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_3884.jpg" width="75" height="100" alt="歌舞青春资料,歌曲和专辑" /></a><a href="/singer/a5/singer_3884.html" class="singerName">歌舞青春</a></li>
+                                            <li><a href="/singer/fc/singer_6540.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_6540.jpg" width="75" height="100" alt="功夫熊猫资料,歌曲和专辑" /></a><a href="/singer/fc/singer_6540.html" class="singerName">功夫熊猫</a></li>
+                                            <li><a href="/singer/32/singer_7232.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_7232.jpg" width="75" height="100" alt="电影原声资料,歌曲和专辑" /></a><a href="/singer/32/singer_7232.html" class="singerName">电影原声</a></li>
+                                            <li><a href="/singer/a5/singer_387.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_387.jpg" width="75" height="100" alt="电视剧歌曲大全资料,歌曲和专辑" /></a><a href="/singer/a5/singer_387.html" class="singerName">电视剧歌曲大全</a></li>
+                                            <li><a href="/singer/32/singer_7222.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_7222.jpg" width="75" height="100" alt="木乃伊资料,歌曲和专辑" /></a><a href="/singer/32/singer_7222.html" class="singerName">木乃伊</a></li>
+                                            <li><a href="/singer/3c/singer_2179.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_2179.jpg" width="75" height="100" alt="仙剑奇侠传资料,歌曲和专辑" /></a><a href="/singer/3c/singer_2179.html" class="singerName">仙剑奇侠传</a></li>
+                                            <li><a href="/singer/03/singer_6313.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_6313.jpg" width="75" height="100" alt="命中注定我爱你资料,歌曲和专辑" /></a><a href="/singer/03/singer_6313.html" class="singerName">命中注定我爱你</a></li>
+                                            <li><a href="/singer/e2/singer_7115.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_7115.jpg" width="75" height="100" alt="赤壁 原声资料,歌曲和专辑" /></a><a href="/singer/e2/singer_7115.html" class="singerName">赤壁 原声</a></li>
+                                            <li><a href="/singer/d0/singer_759.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_759.jpg" width="75" height="100" alt="007系列电影原声资料,歌曲和专辑" /></a><a href="/singer/d0/singer_759.html" class="singerName">007系列电影原声</a></li>
+                                            <li><a href="/singer/32/singer_6649.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_6649.jpg" width="75" height="100" alt="My Blueberry Nights (蓝莓之夜)资料,歌曲和专辑" /></a><a href="/singer/32/singer_6649.html" class="singerName">My Blueberry Nights (蓝莓之夜)</a></li>
+                                            <li><a href="/singer/ad/singer_7477.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_7477.jpg" width="75" height="100" alt="星球大战三部曲资料,歌曲和专辑" /></a><a href="/singer/ad/singer_7477.html" class="singerName">星球大战三部曲</a></li>
+                                            <li><a href="/singer/fb/singer_7666.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_7666.jpg" width="75" height="100" alt="黑糖群侠传资料,歌曲和专辑" /></a><a href="/singer/fb/singer_7666.html" class="singerName">黑糖群侠传</a></li>
+                                            <li><a href="/singer/32/singer_6678.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_6678.jpg" width="75" height="100" alt="Speed Racer 急速赛车资料,歌曲和专辑" /></a><a href="/singer/32/singer_6678.html" class="singerName">Speed Racer 急速赛车</a></li>
+                                            <li><a href="/singer/fc/singer_6537.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_6537.jpg" width="75" height="100" alt="欲望都市资料,歌曲和专辑" /></a><a href="/singer/fc/singer_6537.html" class="singerName">欲望都市</a></li>
+                                            <li><a href="/singer/b5/singer_5594.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_5594.jpg" width="75" height="100" alt="士兵突击资料,歌曲和专辑" /></a><a href="/singer/b5/singer_5594.html" class="singerName">士兵突击</a></li>
+                                            <li><a href="/singer/d2/singer_7305.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_7305.jpg" width="75" height="100" alt="花吃了那女孩资料,歌曲和专辑" /></a><a href="/singer/d2/singer_7305.html" class="singerName">花吃了那女孩</a></li>
+                                            <li><a href="/singer/2a/singer_8812.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_8812.jpg" width="75" height="100" alt="叶问资料,歌曲和专辑" /></a><a href="/singer/2a/singer_8812.html" class="singerName">叶问</a></li>
+                                            <li><a href="/singer/e3/singer_3462.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_3462.jpg" width="75" height="100" alt="加勒比海盗资料,歌曲和专辑" /></a><a href="/singer/e3/singer_3462.html" class="singerName">加勒比海盗</a></li>
+                                            <li><a href="/singer/64/singer_4823.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_4823.jpg" width="75" height="100" alt="虫师资料,歌曲和专辑" /></a><a href="/singer/64/singer_4823.html" class="singerName">虫师</a></li>
+                                            <li><a href="/singer/e2/singer_7132.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_7132.jpg" width="75" height="100" alt="蝙蝠侠资料,歌曲和专辑" /></a><a href="/singer/e2/singer_7132.html" class="singerName">蝙蝠侠</a></li>
+                                            <li><a href="/singer/d9/singer_4618.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_4618.jpg" width="75" height="100" alt="NANA2资料,歌曲和专辑" /></a><a href="/singer/d9/singer_4618.html" class="singerName">NANA2</a></li>
+                                            <li><a href="/singer/c2/singer_1281.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_1281.jpg" width="75" height="100" alt="爱上女主播资料,歌曲和专辑" /></a><a href="/singer/c2/singer_1281.html" class="singerName">爱上女主播</a></li>
+                                            <li><a href="/singer/d9/singer_4654.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_4654.jpg" width="75" height="100" alt="霸王别姬资料,歌曲和专辑" /></a><a href="/singer/d9/singer_4654.html" class="singerName">霸王别姬</a></li>
+                                            <li><a href="/singer/9b/singer_1565.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_1565.jpg" width="75" height="100" alt="海豚湾恋人资料,歌曲和专辑" /></a><a href="/singer/9b/singer_1565.html" class="singerName">海豚湾恋人</a></li>
+                                            <li><a href="/singer/d9/singer_4665.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_4665.jpg" width="75" height="100" alt="火影忍者资料,歌曲和专辑" /></a><a href="/singer/d9/singer_4665.html" class="singerName">火影忍者</a></li>
+                                            <li><a href="/singer/4e/singer_2615.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_2615.jpg" width="75" height="100" alt="神话资料,歌曲和专辑" /></a><a href="/singer/4e/singer_2615.html" class="singerName">神话</a></li>
+                                            <li><a href="/singer/4e/singer_26.html" class="singerPic"><img src="//img.1ting.com/images/singer/s75_26.jpg" width="75" height="100" alt="泰坦尼克号资料,歌曲和专辑" /></a><a href="/singer/4e/singer_26.html" class="singerName">泰坦尼克号</a></li>
+                                                    </ul>
+            </div>
+
+            
+            <a name="YA" class="anchor"> A </a>
+            <div class="singerList">
+                <h3> A </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/18/singer_336.html">阿甘正传</a></li>
+                                                <li><a href="/singer/a5/singer_381.html">阿虎</a></li>
+                                                <li><a href="/singer/6e/singer_2956.html">阿司匹林</a></li>
+                                                <li><a href="/singer/34/singer_30682.html">Adrian Johnston</a></li>
+                                                <li><a href="/singer/a5/singer_38.html">爱君如梦</a></li>
+                                                <li><a href="/singer/37/singer_23402.html">爱情经纪约电视原声带</a></li>
+                                                <li><a href="/singer/d6/singer_3929.html">爱情经纪约</a></li>
+                                                <li><a href="/singer/17/singer_43.html">爱情灵药</a></li>
+                                                <li><a href="/singer/6e/singer_2927.html">爱情魔发师</a></li>
+                                                <li><a href="/singer/3c/singer_2114.html">爱情魔戒</a></li>
+                                                <li class="hot"><a href="/singer/c2/singer_1281.html">爱上女主播</a></li>
+                                                <li><a href="/singer/fb/singer_760.html">爱上主题曲</a></li>
+                                                <li><a href="/singer/63/singer_323.html">爱之日剧恋曲</a></li>
+                                                <li><a href="/singer/67/singer_4740.html">Air City</a></li>
+                                                <li><a href="/singer/34/singer_30662.html">Alain Goraguer</a></li>
+                                                <li><a href="/singer/34/singer_30624.html">Alberto Iglesias</a></li>
+                                                <li><a href="/singer/f7/singer_4423.html">Alice In Wonderland 爱丽丝梦游仙境</a></li>
+                                                <li><a href="/singer/33/singer_28353.html">Alicia Morton, Audra McDonald, Kathy Bates, Victor Garber</a></li>
+                                                <li><a href="/singer/66/singer_5800.html">Alvin and the Chipmunks</a></li>
+                                                <li><a href="/singer/34/singer_30640.html">Angelo Badalamenti</a></li>
+                                                <li><a href="/singer/34/singer_30666.html">Anne Dudley</a></li>
+                                                <li><a href="/singer/d1/singer_791.html">Antarctica</a></li>
+                                                <li><a href="/singer/17/singer_4305.html">奥特曼</a></li>
+                                                <li><a href="/singer/34/singer_30742.html">Arie Band</a></li>
+                                                <li><a href="/singer/33/singer_28183.html">Ask Kirmizi (Motion Picture Soundtrack)</a></li>
+                                                <li><a href="/singer/44/singer_6299.html">August Rush</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YB" class="anchor"> B </a>
+            <div class="singerList">
+                <h3> B </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/3c/singer_2178.html">巴黎恋人</a></li>
+                                                <li><a href="/singer/33/singer_2836.html">八两金</a></li>
+                                                <li class="hot"><a href="/singer/d9/singer_4654.html">霸王别姬</a></li>
+                                                <li><a href="/singer/26/singer_9608.html">败犬女王</a></li>
+                                                <li><a href="/singer/19/singer_3658.html">白色巨塔</a></li>
+                                                <li><a href="/singer/1c/singer_3546.html">百万新娘</a></li>
+                                                <li><a href="/singer/67/singer_4707.html">棒球英豪</a></li>
+                                                <li><a href="/singer/a5/singer_3848.html">宝贝计划</a></li>
+                                                <li><a href="/singer/18/singer_33.html">宝莲灯</a></li>
+                                                <li><a href="/singer/34/singer_30649.html">Barbie</a></li>
+                                                <li><a href="/singer/34/singer_30754.html">Bear McCreary</a></li>
+                                                <li><a href="/singer/6f/singer_1814.html">北京我的爱</a></li>
+                                                <li><a href="/singer/98/singer_20.html">悲情城市</a></li>
+                                                <li><a href="/singer/34/singer_30750.html">Belle and Sebastian</a></li>
+                                                <li><a href="/singer/63/singer_3201.html">彼得潘的公式</a></li>
+                                                <li class="hot"><a href="/singer/e2/singer_7132.html">蝙蝠侠</a></li>
+                                                <li><a href="/singer/64/singer_4858.html">变形金刚</a></li>
+                                                <li><a href="/singer/1c/singer_3528.html">别爱我</a></li>
+                                                <li><a href="/singer/a6/singer_5475.html">蹩脚英语</a></li>
+                                                <li><a href="/singer/34/singer_30762.html">Big Mama Soul</a></li>
+                                                <li><a href="/singer/34/singer_30637.html">Bill Conti</a></li>
+                                                <li><a href="/singer/34/singer_30626.html">Bill Whelan</a></li>
+                                                <li><a href="/singer/17/singer_4306.html">兵临城下</a></li>
+                                                <li><a href="/singer/34/singer_30747.html">Blixa Bargeld</a></li>
+                                                <li><a href="/singer/34/singer_30745.html">Block B</a></li>
+                                                <li><a href="/singer/fb/singer_7665.html">波丽士大人</a></li>
+                                                <li><a href="/singer/34/singer_30771.html">Brian</a></li>
+                                                <li><a href="/singer/63/singer_3252.html">不可能的任务III</a></li>
+                                                <li><a href="/singer/1c/singer_3547.html">布拉格恋人</a></li>
+                                                <li><a href="/singer/c1/singer_3123.html">不良家族</a></li>
+                                                <li><a href="/singer/c0/singer_5078.html">不能说的秘密</a></li>
+                                                <li><a href="/singer/34/singer_30632.html">Burt Bacharach</a></li>
+                                                <li><a href="/singer/33/singer_28788.html">Bye Bye Birdie</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YC" class="anchor"> C </a>
+            <div class="singerList">
+                <h3> C </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/34/singer_30678.html">CAGNET</a></li>
+                                                <li><a href="/singer/73/singer_6751.html">Camp Rock 摇滚青春</a></li>
+                                                <li><a href="/singer/34/singer_30648.html">Carlos Núñez</a></li>
+                                                <li><a href="/singer/a1/singer_4250.html">Catch & Release</a></li>
+                                                <li><a href="/singer/a1/singer_4275.html">查理·卓别林</a></li>
+                                                <li><a href="/singer/34/singer_30627.html">陈其钢</a></li>
+                                                <li><a href="/singer/34/singer_30623.html">陈勋奇</a></li>
+                                                <li><a href="/singer/f7/singer_4428.html">成长的烦恼</a></li>
+                                                <li class="hot"><a href="/singer/e2/singer_7115.html">赤壁 原声</a></li>
+                                                <li><a href="/singer/34/singer_30740.html">CHI-CHI</a></li>
+                                                <li><a href="/singer/e3/singer_3442.html">China Drum</a></li>
+                                                <li class="hot"><a href="/singer/64/singer_4823.html">虫师</a></li>
+                                                <li><a href="/singer/34/singer_30658.html">Chris Joss</a></li>
+                                                <li><a href="/singer/1c/singer_3577.html">触不到的恋人 The Lake House</a></li>
+                                                <li><a href="/singer/a5/singer_384.html">初恋嗱喳面</a></li>
+                                                <li><a href="/singer/18/singer_338.html">初恋的回忆</a></li>
+                                                <li><a href="/singer/67/singer_4776.html">出云战记</a></li>
+                                                <li><a href="/singer/28/singer_5139.html">穿红靴的猫</a></li>
+                                                <li><a href="/singer/9b/singer_15.html">创世纪</a></li>
+                                                <li><a href="/singer/d0/singer_756.html">春光乍泻</a></li>
+                                                <li><a href="/singer/34/singer_3062.html">春天华尔兹</a></li>
+                                                <li><a href="/singer/d9/singer_4609.html">刺青</a></li>
+                                                <li><a href="/singer/34/singer_30752.html">Cliff Martinez</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YD" class="anchor"> D </a>
+            <div class="singerList">
+                <h3> D </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/63/singer_3292.html">达.芬奇密码</a></li>
+                                                <li><a href="/singer/3c/singer_2168.html">大城小事</a></li>
+                                                <li><a href="/singer/d6/singer_3998.html">大敦煌</a></li>
+                                                <li><a href="/singer/33/singer_28.html">大话西游</a></li>
+                                                <li><a href="/singer/1f/singer_1935.html">大板根之恋</a></li>
+                                                <li><a href="/singer/70/singer_1703.html">大卫营</a></li>
+                                                <li><a href="/singer/a1/singer_4276.html">当幸福来敲门</a></li>
+                                                <li><a href="/singer/34/singer_30748.html">Dario Marianelli</a></li>
+                                                <li><a href="/singer/34/singer_30718.html">Deli Spice</a></li>
+                                                <li><a href="/singer/c7/singer_1680.html">第8号当铺</a></li>
+                                                <li><a href="/singer/33/singer_2868.html">第三代</a></li>
+                                                <li><a href="/singer/70/singer_1726.html">地下铁</a></li>
+                                                <li><a href="/singer/32/singer_7238.html">地狱男爵</a></li>
+                                                <li class="hot"><a href="/singer/a5/singer_387.html">电视剧歌曲大全</a></li>
+                                                <li><a href="/singer/35/singer_7847.html">电视原声</a></li>
+                                                <li class="hot"><a href="/singer/32/singer_7232.html">电影原声</a></li>
+                                                <li><a href="/singer/8e/singer_2548.html">刁蛮公主</a></li>
+                                                <li><a href="/singer/c0/singer_5006.html">谍影重重</a></li>
+                                                <li><a href="/singer/e3/singer_3400.html">东方茱丽叶</a></li>
+                                                <li><a href="/singer/c7/singer_1611.html">冬季恋歌</a></li>
+                                                <li><a href="/singer/d6/singer_39.html">东京爱情故事</a></li>
+                                                <li><a href="/singer/a5/singer_388.html">东京攻略</a></li>
+                                                <li><a href="/singer/a5/singer_389.html">东邪西毒</a></li>
+                                                <li><a href="/singer/72/singer_5717.html">斗牛,要不要</a></li>
+                                                <li><a href="/singer/70/singer_1744.html">斗鱼</a></li>
+                                                <li><a href="/singer/98/singer_2004.html">斗鱼Ⅱ</a></li>
+                                                <li><a href="/singer/d6/singer_4001.html">Dreamgirls</a></li>
+                                                <li><a href="/singer/33/singer_2894.html">断臂山</a></li>
+                                                <li><a href="/singer/f7/singer_4401.html">对不起，我爱你</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YE" class="anchor"> E </a>
+            <div class="singerList">
+                <h3> E </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/34/singer_30644.html">Eleni Karaindrou</a></li>
+                                                <li><a href="/singer/34/singer_30657.html">Elliot Goldenthal</a></li>
+                                                <li><a href="/singer/72/singer_5740.html">Eternal Morning (Tablo and Pe2ny)</a></li>
+                                                <li><a href="/singer/6c/singer_4531.html">EVA OST</a></li>
+                                                <li><a href="/singer/34/singer_30673.html">Every Single Day</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YF" class="anchor"> F </a>
+            <div class="singerList">
+                <h3> F </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/73/singer_6712.html">翻滚吧! 蛋炒饭</a></li>
+                                                <li><a href="/singer/8e/singer_2525.html">翻滚吧,男孩</a></li>
+                                                <li><a href="/singer/63/singer_3262.html">防火墙</a></li>
+                                                <li><a href="/singer/17/singer_4378.html">放羊的星星</a></li>
+                                                <li><a href="/singer/c7/singer_1656.html">飞刀又见飞刀</a></li>
+                                                <li><a href="/singer/a5/singer_376.html">飞天舞</a></li>
+                                                <li><a href="/singer/d0/singer_755.html">飞一般的爱情小说</a></li>
+                                                <li><a href="/singer/c7/singer_1604.html">粉红教父小甜甜</a></li>
+                                                <li><a href="/singer/ea/singer_6467.html">蜂蜜幸运草 电视原声带</a></li>
+                                                <li><a href="/singer/18/singer_337.html">风月俏佳人</a></li>
+                                                <li><a href="/singer/ea/singer_642.html">风云</a></li>
+                                                <li><a href="/singer/8e/singer_2543.html">风中战士</a></li>
+                                                <li><a href="/singer/32/singer_6642.html">Fool's Gold 淘金俏冤家 原声</a></li>
+                                                <li><a href="/singer/c1/singer_3186.html">弗莱迪大战杰森</a></li>
+                                                <li><a href="/singer/e2/singer_9702.html">福气又安康</a></li>
+                                                <li><a href="/singer/c7/singer_1616.html">赴宴</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YG" class="anchor"> G </a>
+            <div class="singerList">
+                <h3> G </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/65/singer_1159.html">钢琴</a></li>
+                                                <li><a href="/singer/ea/singer_6480.html">《钢铁侠》电影原声</a></li>
+                                                <li><a href="/singer/34/singer_3089.html">高达SEED</a></li>
+                                                <li class="hot"><a href="/singer/a5/singer_3884.html">歌舞青春</a></li>
+                                                <li><a href="/singer/34/singer_30670.html">George Fenton</a></li>
+                                                <li><a href="/singer/c2/singer_12430.html">Glee Cast</a></li>
+                                                <li><a href="/singer/6e/singer_29592.html">Go (Motion Picture Soundtrack)</a></li>
+                                                <li class="hot"><a href="/singer/fc/singer_6540.html">功夫熊猫</a></li>
+                                                <li><a href="/singer/3c/singer_2105.html">功夫[周星驰]</a></li>
+                                                <li><a href="/singer/6c/singer_4503.html">攻壳机动队</a></li>
+                                                <li><a href="/singer/34/singer_3063.html">Goodbye Solo With UTO</a></li>
+                                                <li><a href="/singer/34/singer_30660.html">Goran Bregovic</a></li>
+                                                <li><a href="/singer/18/singer_331.html">古惑仔</a></li>
+                                                <li><a href="/singer/b6/singer_2246.html">孤恋花</a></li>
+                                                <li><a href="/singer/c7/singer_1637.html">古墓丽影</a></li>
+                                                <li><a href="/singer/6f/singer_1812.html">怪物史莱克2</a></li>
+                                                <li class="hot"><a href="/singer/c7/singer_1612.html">灌篮高手</a></li>
+                                                <li><a href="/singer/34/singer_30676.html">关峡</a></li>
+                                                <li><a href="/singer/d9/singer_4620.html">Gundam</a></li>
+                                                <li><a href="/singer/d6/singer_3983.html">Guru</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YH" class="anchor"> H </a>
+            <div class="singerList">
+                <h3> H </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/32/singer_66.html">哈利波特</a></li>
+                                                <li><a href="/singer/70/singer_1731.html">嗨！亲爱的</a></li>
+                                                <li><a href="/singer/34/singer_3010.html">海上钢琴师</a></li>
+                                                <li><a href="/singer/37/singer_2364.html">海豚爱上猫</a></li>
+                                                <li class="hot"><a href="/singer/9b/singer_1565.html">海豚湾恋人</a></li>
+                                                <li><a href="/singer/64/singer_4824.html">海贼王</a></li>
+                                                <li><a href="/singer/b6/singer_2201.html">韩城攻略</a></li>
+                                                <li><a href="/singer/65/singer_1187.html">汉城奇缘</a></li>
+                                                <li><a href="/singer/63/singer_3290.html">憨豆特工</a></li>
+                                                <li><a href="/singer/9a/singer_5210.html">韩国影视原声</a></li>
+                                                <li><a href="/singer/34/singer_30633.html">韩国原声带</a></li>
+                                                <li><a href="/singer/65/singer_1106.html">韩剧《纯真年代》</a></li>
+                                                <li><a href="/singer/37/singer_2346.html">豪杰春香</a></li>
+                                                <li><a href="/singer/8e/singer_2526.html">好美丽诊所.嘿哈</a></li>
+                                                <li><a href="/singer/34/singer_30639.html">Harry Connick, Jr.</a></li>
+                                                <li><a href="/singer/34/singer_30736.html">Haze</a></li>
+                                                <li><a href="/singer/65/singer_1101.html">河东狮吼</a></li>
+                                                <li><a href="/singer/34/singer_30638.html">何国杰</a></li>
+                                                <li><a href="/singer/9a/singer_5215.html">黑糖玛奇朵</a></li>
+                                                <li class="hot"><a href="/singer/fb/singer_7666.html">黑糖群侠传</a></li>
+                                                <li><a href="/singer/34/singer_30651.html">Henry Mancini</a></li>
+                                                <li><a href="/singer/ea/singer_6404.html">Heroes OST</a></li>
+                                                <li><a href="/singer/6e/singer_29979.html">High On Hope</a></li>
+                                                <li><a href="/singer/d0/singer_754.html">红.爱你一万年</a></li>
+                                                <li><a href="/singer/a3/singer_6832.html">红遍全球</a></li>
+                                                <li><a href="/singer/70/singer_1781.html">侯鸟e人</a></li>
+                                                <li><a href="/singer/6f/singer_1830.html">后天</a></li>
+                                                <li><a href="/singer/6f/singer_1806.html">蝴蝶效应</a></li>
+                                                <li><a href="/singer/6e/singer_2959.html">虎姑婆</a></li>
+                                                <li><a href="/singer/34/singer_30636.html">胡伟立</a></li>
+                                                <li class="hot"><a href="/singer/d2/singer_7305.html">花吃了那女孩</a></li>
+                                                <li><a href="/singer/d0/singer_753.html">花天走地</a></li>
+                                                <li><a href="/singer/1f/singer_1968.html">花样的年华</a></li>
+                                                <li><a href="/singer/d6/singer_391.html">花样年华</a></li>
+                                                <li><a href="/singer/d6/singer_3985.html">花样少年少女</a></li>
+                                                <li><a href="/singer/f7/singer_4419.html">坏女人，好女人</a></li>
+                                                <li><a href="/singer/d6/singer_392.html">还珠格格</a></li>
+                                                <li><a href="/singer/34/singer_30672.html">黄英华</a></li>
+                                                <li><a href="/singer/d6/singer_4023.html">黄真伊</a></li>
+                                                <li><a href="/singer/63/singer_3259.html">火花游戏</a></li>
+                                                <li><a href="/singer/98/singer_2071.html">火线任务</a></li>
+                                                <li class="hot"><a href="/singer/d9/singer_4665.html">火影忍者</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YI" class="anchor"> I </a>
+            <div class="singerList">
+                <h3> I </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/34/singer_30625.html">Immediate Music</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YJ" class="anchor"> J </a>
+            <div class="singerList">
+                <h3> J </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/34/singer_30712.html">J Rabbit</a></li>
+                                                <li><a href="/singer/34/singer_30732.html">Je-A</a></li>
+                                                <li><a href="/singer/34/singer_30655.html">Jeff Danna</a></li>
+                                                <li><a href="/singer/a5/singer_3799.html">极道学园</a></li>
+                                                <li><a href="/singer/34/singer_3068.html">极品飞车</a></li>
+                                                <li><a href="/singer/34/singer_30679.html">吉俣良</a></li>
+                                                <li><a href="/singer/67/singer_4764.html">甲贺忍法帖</a></li>
+                                                <li class="hot"><a href="/singer/e3/singer_3462.html">加勒比海盗</a></li>
+                                                <li><a href="/singer/3c/singer_2113.html">家有菲菲</a></li>
+                                                <li><a href="/singer/33/singer_2821.html">金刚 King Kong</a></li>
+                                                <li><a href="/singer/d3/singer_1059.html">金鸡电影</a></li>
+                                                <li><a href="/singer/d6/singer_393.html">金枝玉叶</a></li>
+                                                <li><a href="/singer/4e/singer_2624.html">经过</a></li>
+                                                <li><a href="/singer/1f/singer_2444.html">京华烟云</a></li>
+                                                <li><a href="/singer/34/singer_30669.html">John Morris</a></li>
+                                                <li><a href="/singer/34/singer_30661.html">Jonathan Elias</a></li>
+                                                <li><a href="/singer/34/singer_30647.html">Jozef Van Wissem</a></li>
+                                                <li><a href="/singer/e3/singer_349.html">角斗士</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YK" class="anchor"> K </a>
+            <div class="singerList">
+                <h3> K </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/6e/singer_29033.html">K Veru</a></li>
+                                                <li><a href="/singer/28/singer_5193.html">咖啡王子1号店</a></li>
+                                                <li><a href="/singer/34/singer_30749.html">Kaada</a></li>
+                                                <li><a href="/singer/a1/singer_4215.html">看看我 比利金</a></li>
+                                                <li><a href="/singer/67/singer_4765.html">柯南</a></li>
+                                                <li><a href="/singer/34/singer_30653.html">Kid Loco</a></li>
+                                                <li><a href="/singer/73/singer_6753.html">Kit Kittredge: An American Girl</a></li>
+                                                <li><a href="/singer/18/singer_332.html">恐龙</a></li>
+                                                <li><a href="/singer/34/singer_30751.html">Kongar-ol Ondar</a></li>
+                                                <li><a href="/singer/44/singer_6278.html">快乐星猫</a></li>
+                                                <li><a href="/singer/c7/singer_1632.html">狂爱龙卷风</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YL" class="anchor"> L </a>
+            <div class="singerList">
+                <h3> L </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/34/singer_30631.html">L. Subramaniam</a></li>
+                                                <li><a href="/singer/73/singer_6776.html">La Jeune Fille Et Les Loups</a></li>
+                                                <li><a href="/singer/63/singer_327.html">蓝色生死恋</a></li>
+                                                <li><a href="/singer/d6/singer_394.html">蓝烟火</a></li>
+                                                <li><a href="/singer/02/singer_2781.html">浪淘沙</a></li>
+                                                <li><a href="/singer/d6/singer_400.html">老夫子</a></li>
+                                                <li><a href="/singer/34/singer_30704.html">Lasse Lindh</a></li>
+                                                <li><a href="/singer/44/singer_6231.html">Le Papillon OST</a></li>
+                                                <li><a href="/singer/6e/singer_29.html">雷霆战警</a></li>
+                                                <li><a href="/singer/34/singer_30726.html">李海鹰</a></li>
+                                                <li><a href="/singer/c2/singer_1282.html">礼物</a></li>
+                                                <li><a href="/singer/34/singer_30642.html">黎允文</a></li>
+                                                <li><a href="/singer/19/singer_3619.html">恋爱初歌</a></li>
+                                                <li><a href="/singer/d9/singer_4601.html">恋人哟</a></li>
+                                                <li><a href="/singer/b5/singer_5552.html">练习曲</a></li>
+                                                <li><a href="/singer/c7/singer_1695.html">恋香</a></li>
+                                                <li><a href="/singer/d6/singer_399.html">恋战冲绳</a></li>
+                                                <li><a href="/singer/34/singer_3052.html">亮剑</a></li>
+                                                <li><a href="/singer/6f/singer_1894.html">靓女郎</a></li>
+                                                <li><a href="/singer/28/singer_5194.html">梁山伯与祝英台</a></li>
+                                                <li><a href="/singer/70/singer_1725.html">梁祝</a></li>
+                                                <li><a href="/singer/34/singer_30768.html">林华全</a></li>
+                                                <li><a href="/singer/34/singer_30665.html">林ゆうき</a></li>
+                                                <li><a href="/singer/34/singer_30629.html">Lisa Gerrard</a></li>
+                                                <li><a href="/singer/63/singer_3240.html">流氓医生</a></li>
+                                                <li><a href="/singer/c2/singer_12.html">流星花园</a></li>
+                                                <li><a href="/singer/98/singer_2047.html">龙凤斗</a></li>
+                                                <li><a href="/singer/1c/singer_3598.html">龙虎门</a></li>
+                                                <li><a href="/singer/73/singer_6779.html">鹿鼎记</a></li>
+                                                <li><a href="/singer/1f/singer_2478.html">露露公主(Princess LuLu)</a></li>
+                                                <li><a href="/singer/34/singer_30753.html">Luis Bacalov</a></li>
+                                                <li><a href="/singer/c1/singer_3142.html">轮舞曲</a></li>
+                                                <li><a href="/singer/e3/singer_340.html">罗拉快跑</a></li>
+                                                <li><a href="/singer/e3/singer_346.html">罗密欧与茱丽叶</a></li>
+                                                <li><a href="/singer/02/singer_2727.html">绿光森林</a></li>
+                                                <li><a href="/singer/a1/singer_4279.html">绿野仙踪</a></li>
+                                                <li><a href="/singer/18/singer_339.html">律政俏佳人</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YM" class="anchor"> M </a>
+            <div class="singerList">
+                <h3> M </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/37/singer_2382.html">马达加斯加</a></li>
+                                                <li><a href="/singer/d0/singer_752.html">麻辣鲜师</a></li>
+                                                <li><a href="/singer/34/singer_30671.html">Mad Soul Child</a></li>
+                                                <li><a href="/singer/64/singer_4833.html">猫的报恩</a></li>
+                                                <li><a href="/singer/34/singer_30663.html">Mark Snow</a></li>
+                                                <li><a href="/singer/1f/singer_1967.html">MARS战神</a></li>
+                                                <li><a href="/singer/34/singer_30634.html">Max Steiner</a></li>
+                                                <li><a href="/singer/73/singer_6752.html">美国女孩</a></li>
+                                                <li><a href="/singer/e3/singer_341.html">美国甜心</a></li>
+                                                <li><a href="/singer/e3/singer_342.html">美国往事</a></li>
+                                                <li><a href="/singer/a5/singer_377.html">美丽人生</a></li>
+                                                <li><a href="/singer/63/singer_32.html">美丽新世界</a></li>
+                                                <li><a href="/singer/19/singer_3610.html">美妙人生</a></li>
+                                                <li><a href="/singer/c2/singer_1297.html">美人鱼</a></li>
+                                                <li><a href="/singer/e3/singer_344.html">美女与野兽</a></li>
+                                                <li><a href="/singer/66/singer_5815.html">美味关系</a></li>
+                                                <li><a href="/singer/34/singer_30755.html">妹尾武</a></li>
+                                                <li><a href="/singer/34/singer_30727.html">Melody Day</a></li>
+                                                <li><a href="/singer/aa/singer_1474.html">Men in Black</a></li>
+                                                <li><a href="/singer/f7/singer_4414.html">梦幻的情侣</a></li>
+                                                <li><a href="/singer/63/singer_3213.html">盟军敢死队</a></li>
+                                                <li><a href="/singer/98/singer_2079.html">梦游夏威夷</a></li>
+                                                <li><a href="/singer/6f/singer_1871.html">米迦勒之舞</a></li>
+                                                <li><a href="/singer/d0/singer_751.html">庙街皇后</a></li>
+                                                <li><a href="/singer/8e/singer_25.html">妙手仁心</a></li>
+                                                <li><a href="/singer/34/singer_30650.html">Michael Andrews</a></li>
+                                                <li><a href="/singer/34/singer_30664.html">Michael Brook</a></li>
+                                                <li><a href="/singer/34/singer_30733.html">Min</a></li>
+                                                <li><a href="/singer/6c/singer_4548.html">明明</a></li>
+                                                <li><a href="/singer/6e/singer_2914.html">明星志愿3</a></li>
+                                                <li><a href="/singer/c2/singer_1211.html">名扬四海</a></li>
+                                                <li class="hot"><a href="/singer/03/singer_6313.html">命中注定我爱你</a></li>
+                                                <li><a href="/singer/4e/singer_26047.html">Mio Min Mio</a></li>
+                                                <li><a href="/singer/e3/singer_345.html">魔戒</a></li>
+                                                <li><a href="/singer/18/singer_330.html">魔女的条件</a></li>
+                                                <li><a href="/singer/72/singer_5773.html">魔术男</a></li>
+                                                <li class="hot"><a href="/singer/32/singer_7222.html">木乃伊</a></li>
+                                                <li><a href="/singer/81/singer_958.html">MVP情人</a></li>
+                                                <li class="hot"><a href="/singer/32/singer_6649.html">My Blueberry Nights (蓝莓之夜)</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YN" class="anchor"> N </a>
+            <div class="singerList">
+                <h3> N </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/fc/singer_6572.html">纳尔尼亚传奇2: 凯斯宾王子</a></li>
+                                                <li><a href="/singer/3c/singer_2134.html">男丁格尔</a></li>
+                                                <li><a href="/singer/6f/singer_1831.html">男生女生向前走</a></li>
+                                                <li class="hot"><a href="/singer/d9/singer_4618.html">NANA2</a></li>
+                                                <li><a href="/singer/1f/singer_24299.html">你为我著迷 电视原声带</a></li>
+                                                <li><a href="/singer/34/singer_30668.html">Nico Muhly</a></li>
+                                                <li><a href="/singer/73/singer_6777.html">Nim's Island</a></li>
+                                                <li><a href="/singer/34/singer_30630.html">Nino Rota</a></li>
+                                                <li><a href="/singer/18/singer_334.html">纽约的秋天</a></li>
+                                                <li><a href="/singer/65/singer_1103.html">Notting Hill</a></li>
+                                                <li><a href="/singer/b6/singer_2239.html">挪亚方舟惊世启示</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YO" class="anchor"> O </a>
+            <div class="singerList">
+                <h3> O </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/67/singer_4770.html">Once</a></li>
+                                                <li><a href="/singer/1f/singer_2421.html">Only you</a></li>
+                                                <li><a href="/singer/33/singer_28044.html">Original Motion Picture Soundtrack</a></li>
+                                                <li><a href="/singer/6e/singer_29320.html">Original Soundtrack</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YP" class="anchor"> P </a>
+            <div class="singerList">
+                <h3> P </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/6e/singer_29085.html">P.R. Murali</a></li>
+                                                <li><a href="/singer/34/singer_4151.html">霹雳皇龙纪</a></li>
+                                                <li><a href="/singer/c5/singer_1322.html">霹雳英雄</a></li>
+                                                <li><a href="/singer/81/singer_9576.html">痞子英雄</a></li>
+                                                <li><a href="/singer/64/singer_4815.html">苹果核战记</a></li>
+                                                <li><a href="/singer/37/singer_2301.html">乒乓</a></li>
+                                                <li><a href="/singer/4e/singer_26049.html">Pixote</a></li>
+                                                <li><a href="/singer/33/singer_28750.html">Praise Hymn Tracks</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YQ" class="anchor"> Q </a>
+            <div class="singerList">
+                <h3> Q </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/1c/singer_3580.html">Q狼特勤组</a></li>
+                                                <li><a href="/singer/e2/singer_7186.html">棋魂OST</a></li>
+                                                <li><a href="/singer/1f/singer_2432.html">七剑</a></li>
+                                                <li><a href="/singer/18/singer_3390.html">汽车总动员</a></li>
+                                                <li><a href="/singer/c7/singer_1650.html">七年级生</a></li>
+                                                <li><a href="/singer/34/singer_30723.html">其他原声带</a></li>
+                                                <li><a href="/singer/d0/singer_750.html">齐天周大圣之西游记</a></li>
+                                                <li><a href="/singer/64/singer_4816.html">七武士</a></li>
+                                                <li><a href="/singer/67/singer_4750.html">钱的战争</a></li>
+                                                <li><a href="/singer/70/singer_1709.html">千金百分百</a></li>
+                                                <li><a href="/singer/c7/singer_1620.html">倩女幽魂</a></li>
+                                                <li><a href="/singer/c7/singer_1681.html">牵手向明天</a></li>
+                                                <li><a href="/singer/b6/singer_22.html">将爱情进行到底</a></li>
+                                                <li><a href="/singer/9b/singer_1595.html">蔷薇之恋</a></li>
+                                                <li><a href="/singer/c2/singer_1224.html">情敌</a></li>
+                                                <li><a href="/singer/33/singer_2830.html">情癫大圣</a></li>
+                                                <li><a href="/singer/6f/singer_1811.html">情定爱琴海</a></li>
+                                                <li><a href="/singer/c7/singer_1609.html">情归阿拉巴马</a></li>
+                                                <li><a href="/singer/c2/singer_1256.html">青龙好汉</a></li>
+                                                <li><a href="/singer/37/singer_23.html">情深深雨濛濛</a></li>
+                                                <li><a href="/singer/6f/singer_1802.html">求婚事务所</a></li>
+                                                <li><a href="/singer/34/singer_30746.html">QUAGUA</a></li>
+                                                <li><a href="/singer/b5/singer_5553.html">拳皇</a></li>
+                                                <li><a href="/singer/a3/singer_6898.html">全民超人汉考克</a></li>
+                                                <li><a href="/singer/64/singer_4817.html">犬夜叉</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YR" class="anchor"> R </a>
+            <div class="singerList">
+                <h3> R </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/34/singer_30646.html">Rachel Portman</a></li>
+                                                <li><a href="/singer/b6/singer_2270.html">燃烧天堂</a></li>
+                                                <li><a href="/singer/a6/singer_5476.html">染血王国</a></li>
+                                                <li><a href="/singer/34/singer_30652.html">Randy Edelman</a></li>
+                                                <li><a href="/singer/34/singer_30667.html">Ray Conniff</a></li>
+                                                <li><a href="/singer/f7/singer_4430.html">热情仲夏</a></li>
+                                                <li><a href="/singer/34/singer_30643.html">Red Buddha</a></li>
+                                                <li><a href="/singer/19/singer_362.html">人工智能</a></li>
+                                                <li><a href="/singer/c7/singer_16.html">人间四月天</a></li>
+                                                <li><a href="/singer/ad/singer_749.html">人妖打排球</a></li>
+                                                <li><a href="/singer/34/singer_30769.html">Riz Ortolani</a></li>
+                                                <li><a href="/singer/34/singer_30641.html">Ronan Hardiman</a></li>
+                                                <li><a href="/singer/02/singer_2738.html">如果·爱</a></li>
+                                                <li><a href="/singer/e3/singer_347.html">女巫布莱尔2</a></li>
+                                                <li><a href="/singer/d6/singer_401.html">阮玲玉(葬心)</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YS" class="anchor"> S </a>
+            <div class="singerList">
+                <h3> S </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/f7/singer_4400.html">三叶草 原声OST</a></li>
+                                                <li><a href="/singer/37/singer_2314.html">三姊妹的情人</a></li>
+                                                <li><a href="/singer/f4/singer_495.html">涩女郎</a></li>
+                                                <li><a href="/singer/03/singer_6375.html">Semi-Pro</a></li>
+                                                <li><a href="/singer/9b/singer_1576.html">色即是空</a></li>
+                                                <li class="hot"><a href="/singer/d8/singer_5339.html">色·戒</a></li>
+                                                <li><a href="/singer/6c/singer_4511.html">闪灵二人组</a></li>
+                                                <li><a href="/singer/d6/singer_4076.html">伤城</a></li>
+                                                <li><a href="/singer/66/singer_5856.html">上书房</a></li>
+                                                <li><a href="/singer/72/singer_5726.html">少年吔, 安啦</a></li>
+                                                <li><a href="/singer/d0/singer_757.html">少年包青天VS红楼梦</a></li>
+                                                <li><a href="/singer/d6/singer_395.html">少年梁祝</a></li>
+                                                <li><a href="/singer/c2/singer_1225.html">少年史艳文</a></li>
+                                                <li><a href="/singer/34/singer_4164.html">少年杨家将</a></li>
+                                                <li><a href="/singer/19/singer_367.html">少儿不宜</a></li>
+                                                <li><a href="/singer/18/singer_3329.html">神雕侠侣(CCTV)</a></li>
+                                                <li class="hot"><a href="/singer/4e/singer_2615.html">神话</a></li>
+                                                <li><a href="/singer/67/singer_4789.html">神奇四侠</a></li>
+                                                <li><a href="/singer/1c/singer_3531.html">深情密码</a></li>
+                                                <li><a href="/singer/32/singer_6620.html">圣斗士OST</a></li>
+                                                <li><a href="/singer/d9/singer_4671.html">圣母在上</a></li>
+                                                <li><a href="/singer/34/singer_4169.html">生日快乐</a></li>
+                                                <li><a href="/singer/a5/singer_3826.html">盛夏光年</a></li>
+                                                <li><a href="/singer/e2/singer_979.html">圣夏零度C</a></li>
+                                                <li><a href="/singer/c7/singer_1670.html">十八岁的天空</a></li>
+                                                <li class="hot"><a href="/singer/b5/singer_5594.html">士兵突击</a></li>
+                                                <li><a href="/singer/ad/singer_748.html">十二夜</a></li>
+                                                <li><a href="/singer/d6/singer_396.html">十九楼半的夏天</a></li>
+                                                <li><a href="/singer/6f/singer_1879.html">十面埋伏</a></li>
+                                                <li><a href="/singer/67/singer_4725.html">十三罗汉</a></li>
+                                                <li><a href="/singer/19/singer_361.html">狮子王</a></li>
+                                                <li><a href="/singer/c7/singer_1672.html">熟女欲望日记</a></li>
+                                                <li><a href="/singer/1f/singer_1911.html">双恋</a></li>
+                                                <li><a href="/singer/6f/singer_1815.html">水晶之恋</a></li>
+                                                <li><a href="/singer/c2/singer_1208.html">四大名捕</a></li>
+                                                <li><a href="/singer/67/singer_4720.html">食神</a></li>
+                                                <li><a href="/singer/67/singer_4754.html">死神</a></li>
+                                                <li><a href="/singer/19/singer_3662.html">死亡笔记</a></li>
+                                                <li><a href="/singer/1f/singer_1909.html">Silent Hill 4 - The Room</a></li>
+                                                <li><a href="/singer/33/singer_28023.html">SMASH Cast</a></li>
+                                                <li><a href="/singer/34/singer_30659.html">Sonny Rollins</a></li>
+                                                <li><a href="/singer/34/singer_30759.html">Sonya</a></li>
+                                                <li><a href="/singer/34/singer_30002.html">Sound City - Real to Reel</a></li>
+                                                <li class="hot"><a href="/singer/32/singer_6678.html">Speed Racer 急速赛车</a></li>
+                                                <li><a href="/singer/1c/singer_3591.html">Step Up 舞出我人生</a></li>
+                                                <li><a href="/singer/34/singer_30654.html">Stephen Warbeck</a></li>
+                                                <li><a href="/singer/9b/singer_1577.html">隋唐英雄传</a></li>
+                                                <li><a href="/singer/34/singer_30722.html">Sunny Hill</a></li>
+                                                <li><a href="/singer/67/singer_4781.html">Surf's Up</a></li>
+                                                <li><a href="/singer/34/singer_30709.html">Suzy</a></li>
+                                                <li><a href="/singer/34/singer_30767.html">Sylvester Levay</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YT" class="anchor"> T </a>
+            <div class="singerList">
+                <h3> T </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/1c/singer_3548.html">台风</a></li>
+                                                <li class="hot"><a href="/singer/4e/singer_26.html">泰坦尼克号</a></li>
+                                                <li><a href="/singer/b5/singer_5566.html">太阳照常升起</a></li>
+                                                <li><a href="/singer/32/singer_6643.html">淘金俏冤家</a></li>
+                                                <li><a href="/singer/98/singer_2049.html">桃色</a></li>
+                                                <li><a href="/singer/ad/singer_747.html">特警新人类2</a></li>
+                                                <li><a href="/singer/34/singer_30645.html">Tenacious D</a></li>
+                                                <li><a href="/singer/6c/singer_4597.html">The 4400</a></li>
+                                                <li><a href="/singer/18/singer_3313.html">The Notebook</a></li>
+                                                <li><a href="/singer/34/singer_30707.html">The One</a></li>
+                                                <li><a href="/singer/34/singer_30656.html">Theodore Shapiro</a></li>
+                                                <li><a href="/singer/c7/singer_1667.html">天地英雄</a></li>
+                                                <li><a href="/singer/67/singer_4763.html">天狗捉鬼帮</a></li>
+                                                <li><a href="/singer/1f/singer_1976.html">天国的嫁衣</a></li>
+                                                <li><a href="/singer/fb/singer_764.html">天脉传奇</a></li>
+                                                <li><a href="/singer/c0/singer_501.html">甜柠檬之恋</a></li>
+                                                <li><a href="/singer/6e/singer_2902.html">天上星星天下星星</a></li>
+                                                <li><a href="/singer/c2/singer_1216.html">天使爱美丽</a></li>
+                                                <li><a href="/singer/d6/singer_3980.html">天使情人</a></li>
+                                                <li><a href="/singer/70/singer_17.html">天使之城</a></li>
+                                                <li><a href="/singer/19/singer_3634.html">天堂来的孩子</a></li>
+                                                <li><a href="/singer/6e/singer_2923.html">天外飞仙</a></li>
+                                                <li><a href="/singer/aa/singer_14.html">天下无双</a></li>
+                                                <li><a href="/singer/3c/singer_2104.html">天下无贼</a></li>
+                                                <li><a href="/singer/14/singer_6942.html">天下足球</a></li>
+                                                <li><a href="/singer/98/singer_2059.html">天一生水</a></li>
+                                                <li><a href="/singer/70/singer_1734.html">铁臂阿童木</a></li>
+                                                <li><a href="/singer/3c/singer_2196.html">听不到的恋人</a></li>
+                                                <li><a href="/singer/e3/singer_3479.html">听见小城之春</a></li>
+                                                <li><a href="/singer/4e/singer_2677.html">童梦奇缘</a></li>
+                                                <li><a href="/singer/e2/singer_7137.html">通缉犯</a></li>
+                                                <li><a href="/singer/1f/singer_2422.html">偷天换日</a></li>
+                                                <li><a href="/singer/37/singer_2328.html">头文字D</a></li>
+                                                <li><a href="/singer/c7/singer_166.html">吐司男之吻</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YU" class="anchor"> U </a>
+            <div class="singerList">
+                <h3> U </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/34/singer_30764.html">Ulala Session</a></li>
+                                                <li><a href="/singer/4e/singer_2627.html">Ultimate Disney Princess</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YV" class="anchor"> V </a>
+            <div class="singerList">
+                <h3> V </h3>
+                <ul class="allSinger">
+                                        <li class="nohot">本类暂无歌手</li>
+                                    </ul>
+            </div>
+            
+            <a name="YW" class="anchor"> W </a>
+            <div class="singerList">
+                <h3> W </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/8e/singer_2531.html">外出</a></li>
+                                                <li><a href="/singer/19/singer_363.html">完美风暴</a></li>
+                                                <li><a href="/singer/18/singer_33125.html">网剧原声</a></li>
+                                                <li><a href="/singer/67/singer_4713.html">网球王子</a></li>
+                                                <li><a href="/singer/b6/singer_2295.html">王子变青蛙</a></li>
+                                                <li><a href="/singer/18/singer_3302.html">伟大的遗产</a></li>
+                                                <li><a href="/singer/4e/singer_2676.html">维纳斯之恋</a></li>
+                                                <li><a href="/singer/19/singer_3680.html">危险心灵</a></li>
+                                                <li><a href="/singer/1c/singer_3502.html">微笑PASTA</a></li>
+                                                <li><a href="/singer/d8/singer_5327.html">West Side Story</a></li>
+                                                <li><a href="/singer/1f/singer_1901.html">我的宠物老公</a></li>
+                                                <li><a href="/singer/c5/singer_1321.html">我的秘密花园</a></li>
+                                                <li><a href="/singer/6e/singer_2939.html">我的儿子是老大</a></li>
+                                                <li><a href="/singer/e3/singer_3430.html">我的女孩</a></li>
+                                                <li><a href="/singer/c5/singer_1323.html">我的失忆男友</a></li>
+                                                <li><a href="/singer/c7/singer_1685.html">我的野蛮初恋</a></li>
+                                                <li><a href="/singer/1f/singer_2470.html">我的野蛮千金</a></li>
+                                                <li><a href="/singer/63/singer_322.html">我的野蛮女友</a></li>
+                                                <li><a href="/singer/1c/singer_3537.html">我的野蛮王妃/宫</a></li>
+                                                <li><a href="/singer/64/singer_4818.html">我的主人</a></li>
+                                                <li><a href="/singer/98/singer_2081.html">我和僵尸有个约会III</a></li>
+                                                <li><a href="/singer/1f/singer_24.html">我和僵尸有个约会</a></li>
+                                                <li><a href="/singer/c1/singer_31.html">卧虎藏龙</a></li>
+                                                <li><a href="/singer/33/singer_2806.html">我叫金三顺</a></li>
+                                                <li><a href="/singer/d9/singer_4680.html">我是谁</a></li>
+                                                <li><a href="/singer/d8/singer_539.html">我为歌狂</a></li>
+                                                <li><a href="/singer/70/singer_1733.html">我心飞翔</a></li>
+                                                <li><a href="/singer/3c/singer_2157.html">我亚妈发仔瘟</a></li>
+                                                <li><a href="/singer/28/singer_5131.html">我要变成硬柿子</a></li>
+                                                <li><a href="/singer/1f/singer_2436.html">我只在乎你</a></li>
+                                                <li><a href="/singer/ad/singer_7491.html">无敌珊宝妹</a></li>
+                                                <li><a href="/singer/a5/singer_3805.html">屋顶上的绿宝石</a></li>
+                                                <li><a href="/singer/33/singer_2831.html">无极</a></li>
+                                                <li><a href="/singer/d3/singer_1084.html">无间道</a></li>
+                                                <li><a href="/singer/8e/singer_25857.html">恶灵'05电视原声带</a></li>
+                                                <li><a href="/singer/4e/singer_2604.html">恶灵05</a></li>
+                                                <li><a href="/singer/8e/singer_2595.html">恶男宅急电</a></li>
+                                                <li><a href="/singer/67/singer_4792.html">武器种族传说</a></li>
+                                                <li><a href="/singer/6f/singer_1848.html">五月之恋</a></li>
+                                                <li><a href="/singer/4e/singer_2673.html">恶作剧之吻</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YX" class="anchor"> X </a>
+            <div class="singerList">
+                <h3> X </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/c5/singer_1379.html">X Men</a></li>
+                                                <li><a href="/singer/34/singer_30697.html">西村由紀江</a></li>
+                                                <li><a href="/singer/c7/singer_1655.html">西街少年</a></li>
+                                                <li><a href="/singer/67/singer_4706.html">吸血鬼猎人D</a></li>
+                                                <li><a href="/singer/19/singer_364.html">吸血鬼女王</a></li>
+                                                <li><a href="/singer/92/singer_926.html">夕阳天使</a></li>
+                                                <li><a href="/singer/ad/singer_746.html">西游记贰</a></li>
+                                                <li><a href="/singer/07/singer_6093.html">夏天的尾巴</a></li>
+                                                <li><a href="/singer/34/singer_30692.html">XIAH Junsu</a></li>
+                                                <li class="hot"><a href="/singer/3c/singer_2179.html">仙剑奇侠传</a></li>
+                                                <li><a href="/singer/f7/singer_4435.html">现在只想爱你</a></li>
+                                                <li><a href="/singer/19/singer_366.html">香草的天空</a></li>
+                                                <li><a href="/singer/6c/singer_4542.html">想飞</a></li>
+                                                <li><a href="/singer/9b/singer_1585.html">向左爱.向右爱</a></li>
+                                                <li><a href="/singer/c7/singer_1629.html">向左走.向右走</a></li>
+                                                <li><a href="/singer/3c/singer_21.html">笑傲江湖</a></li>
+                                                <li><a href="/singer/d6/singer_40.html">新白娘子传奇</a></li>
+                                                <li><a href="/singer/67/singer_4758.html">心动的日子</a></li>
+                                                <li><a href="/singer/c7/singer_1625.html">心动列车</a></li>
+                                                <li><a href="/singer/98/singer_2025.html">心恋</a></li>
+                                                <li><a href="/singer/d6/singer_397.html">新上海滩</a></li>
+                                                <li><a href="/singer/6f/singer_18.html">新神雕侠侣</a></li>
+                                                <li><a href="/singer/34/singer_30.html">星光闪闪耀华星</a></li>
+                                                <li><a href="/singer/6f/singer_1863.html">星际传奇2</a></li>
+                                                <li><a href="/singer/64/singer_4847.html">星空</a></li>
+                                                <li><a href="/singer/b6/singer_2278.html">星球大战前传3:西斯的反击</a></li>
+                                                <li class="hot"><a href="/singer/ad/singer_7477.html">星球大战三部曲</a></li>
+                                                <li><a href="/singer/66/singer_5883.html">星星知我心</a></li>
+                                                <li><a href="/singer/c7/singer_1659.html">星愿</a></li>
+                                                <li><a href="/singer/c2/singer_1296.html">行运超人</a></li>
+                                                <li><a href="/singer/70/singer_1739.html">熊的传说</a></li>
+                                                <li><a href="/singer/19/singer_368.html">兄弟</a></li>
+                                                <li><a href="/singer/d2/singer_736.html">雪地里的星星</a></li>
+                                                <li><a href="/singer/70/singer_1741.html">雪天使</a></li>
+                                                <li><a href="/singer/c1/singer_3119.html">雪中情人</a></li>
+                                                <li><a href="/singer/1f/singer_19.html">熏衣草</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YY" class="anchor"> Y </a>
+            <div class="singerList">
+                <h3> Y </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/1f/singer_2484.html">亚卡比枪击事件</a></li>
+                                                <li><a href="/singer/6f/singer_1893.html">亚瑟王</a></li>
+                                                <li><a href="/singer/98/singer_2098.html">艳光四射歌舞团</a></li>
+                                                <li><a href="/singer/ad/singer_744.html">演戏家族遇上1941的女孩</a></li>
+                                                <li><a href="/singer/d9/singer_4672.html">妖精旋律</a></li>
+                                                <li><a href="/singer/d9/singer_4677.html">遥远时空中</a></li>
+                                                <li><a href="/singer/6e/singer_2912.html">夜半歌声</a></li>
+                                                <li><a href="/singer/6f/singer_1844.html">野蛮师姐</a></li>
+                                                <li class="hot"><a href="/singer/2a/singer_8812.html">叶问</a></li>
+                                                <li><a href="/singer/19/singer_3679.html">夜宴</a></li>
+                                                <li><a href="/singer/03/singer_6314.html">一个好爸爸</a></li>
+                                                <li><a href="/singer/a5/singer_3859.html">一年之初</a></li>
+                                                <li><a href="/singer/c1/singer_3112.html">一球成名</a></li>
+                                                <li><a href="/singer/18/singer_3301.html">伊莎贝拉</a></li>
+                                                <li><a href="/singer/3c/singer_2112.html">倚天屠龙记</a></li>
+                                                <li><a href="/singer/19/singer_369.html">异形</a></li>
+                                                <li><a href="/singer/d9/singer_4662.html">吟游默示録</a></li>
+                                                <li><a href="/singer/26/singer_965.html">影视歌曲合集</a></li>
+                                                <li><a href="/singer/d6/singer_402.html">影视音乐集锦</a></li>
+                                                <li><a href="/singer/c7/singer_1639.html">英雄本色</a></li>
+                                                <li><a href="/singer/ed/singer_981.html">英雄电影原声大碟</a></li>
+                                                <li><a href="/singer/c0/singer_5040.html">樱野3加1</a></li>
+                                                <li><a href="/singer/34/singer_30703.html">Yisabel</a></li>
+                                                <li><a href="/singer/a5/singer_370.html">勇敢的心</a></li>
+                                                <li><a href="/singer/17/singer_4374.html">幽灵骑士</a></li>
+                                                <li><a href="/singer/9b/singer_1568.html">又见橘花香</a></li>
+                                                <li class="hot"><a href="/singer/f4/singer_4908.html">又见一帘幽梦</a></li>
+                                                <li class="hot"><a href="/singer/fc/singer_6537.html">欲望都市</a></li>
+                                                <li><a href="/singer/1f/singer_1916.html">欲望人生之歌</a></li>
+                                                <li><a href="/singer/d6/singer_398.html">宇宙无敌奖门人</a></li>
+                                                <li><a href="/singer/a5/singer_3897.html">原点</a></li>
+                                                <li><a href="/singer/ad/singer_745.html">冤家宜结不宜解</a></li>
+                                                <li><a href="/singer/a5/singer_371.html">缘来是你</a></li>
+                                                <li><a href="/singer/34/singer_30628.html">原声带</a></li>
+                                                <li><a href="/singer/d6/singer_3907.html">缘邀知音</a></li>
+                                                <li><a href="/singer/d6/singer_3947.html">越狱</a></li>
+                                                <li><a href="/singer/c7/singer_167.html">乐作剧</a></li>
+                                                <li><a href="/singer/d9/singer_4664.html">云之彼端</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YZ" class="anchor"> Z </a>
+            <div class="singerList">
+                <h3> Z </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="/singer/34/singer_30635.html">Zbigniew Preisner</a></li>
+                                                <li><a href="/singer/a5/singer_372.html">摘星奇缘</a></li>
+                                                <li><a href="/singer/f0/singer_805.html">摘星</a></li>
+                                                <li><a href="/singer/f7/singer_4452.html">战火兄弟连</a></li>
+                                                <li class="hot"><a href="/singer/02/singer_2710.html">长恨歌</a></li>
+                                                <li><a href="/singer/e3/singer_3457.html">这该死的爱</a></li>
+                                                <li><a href="/singer/07/singer_6080.html">这里发现爱</a></li>
+                                                <li><a href="/singer/1c/singer_3549.html">真爱赌注</a></li>
+                                                <li><a href="/singer/d9/singer_4682.html">贞观长歌</a></li>
+                                                <li><a href="/singer/a1/singer_42.html">真情告白</a></li>
+                                                <li><a href="/singer/02/singer_2702.html">侦探物语</a></li>
+                                                <li><a href="/singer/63/singer_3273.html">真相大白</a></li>
+                                                <li><a href="/singer/f7/singer_4413.html">黃真伊</a></li>
+                                                <li><a href="/singer/02/singer_27.html">珍珠港</a></li>
+                                                <li><a href="/singer/e3/singer_3456.html">真珠美人鱼</a></li>
+                                                <li><a href="/singer/98/singer_2024.html">争分夺秒</a></li>
+                                                <li><a href="/singer/c7/singer_1610.html">芝加哥</a></li>
+                                                <li><a href="/singer/6f/singer_1847.html">蜘蛛侠</a></li>
+                                                <li><a href="/singer/17/singer_4314.html">重返中世纪</a></li>
+                                                <li><a href="/singer/34/singer_30770.html">中国好声音</a></li>
+                                                <li><a href="/singer/33/singer_2823.html">终极一班</a></li>
+                                                <li><a href="/singer/9a/singer_5211.html">终极一家</a></li>
+                                                <li><a href="/singer/34/singer_41.html">钟无艳</a></li>
+                                                <li><a href="/singer/a5/singer_373.html">侏罗纪公园3</a></li>
+                                                <li><a href="/singer/c1/singer_31980.html">主题曲片尾曲</a></li>
+                                                <li><a href="/singer/63/singer_3253.html">主题曲</a></li>
+                                                <li><a href="/singer/8e/singer_2559.html">住左边住右边幸福小套房</a></li>
+                                                <li><a href="/singer/34/singer_4198.html">转角遇到爱</a></li>
+                                                <li><a href="/singer/34/singer_30773.html">Zi-A</a></li>
+                                                <li><a href="/singer/1f/singer_2479.html">走向海边</a></li>
+                                                <li><a href="/singer/d8/singer_5314.html">最遥远的距离</a></li>
+                                                <li><a href="/singer/64/singer_4832.html">最终兵器彼女</a></li>
+                                                <li><a href="/singer/02/singer_2733.html">佐罗传奇</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="Y0-9" class="anchor"> 0-9 </a>
+            <div class="singerList">
+                <h3> 0-9 </h3>
+                <ul class="allSinger">
+                                                                                                                    <li class="hot"><a href="/singer/d0/singer_759.html">007系列电影原声</a></li>
+                                                <li><a href="/singer/3c/singer_2177.html">101次求婚</a></li>
+                                                <li><a href="/singer/18/singer_335.html">102条斑点狗</a></li>
+                                                <li><a href="/singer/70/singer_1749.html">20 30 40</a></li>
+                                                <li><a href="/singer/33/singer_28550.html">20 Feet From Stardom - Music From The Motion Picture</a></li>
+                                                <li><a href="/singer/b6/singer_2218.html">281封信</a></li>
+                                                <li><a href="/singer/f7/singer_4440.html">300斯巴达勇士</a></li>
+                                                <li><a href="/singer/02/singer_2799.html">45℃天空下</a></li>
+                                                <li><a href="/singer/28/singer_5137.html">サンキュー!!</a></li>
+                                                <li><a href="/singer/34/singer_30674.html">박정원</a></li>
+                                                <li><a href="/singer/34/singer_30675.html">백지영</a></li>
+                                                <li><a href="/singer/34/singer_30677.html">김수현</a></li>
+                                                <li><a href="/singer/34/singer_30680.html">장근석</a></li>
+                                                <li><a href="/singer/34/singer_30683.html">강민혁</a></li>
+                                                <li><a href="/singer/34/singer_30686.html">박신혜</a></li>
+                                                <li><a href="/singer/34/singer_30687.html">정엽</a></li>
+                                                <li><a href="/singer/34/singer_30688.html">나윤권</a></li>
+                                                <li><a href="/singer/34/singer_30690.html">정일우</a></li>
+                                                <li><a href="/singer/34/singer_30693.html">박완규</a></li>
+                                                <li><a href="/singer/34/singer_30695.html">김현중</a></li>
+                                                <li><a href="/singer/34/singer_30696.html">서영은</a></li>
+                                                <li><a href="/singer/34/singer_30698.html">신재</a></li>
+                                                <li><a href="/singer/34/singer_30700.html">조현재</a></li>
+                                                <li><a href="/singer/34/singer_30701.html">성준</a></li>
+                                                <li><a href="/singer/34/singer_30702.html">윤화재인</a></li>
+                                                <li><a href="/singer/34/singer_30705.html">성시경</a></li>
+                                                <li><a href="/singer/34/singer_30706.html">대성</a></li>
+                                                <li><a href="/singer/34/singer_30710.html">장재인</a></li>
+                                                <li><a href="/singer/34/singer_30711.html">이지영</a></li>
+                                                <li><a href="/singer/34/singer_30713.html">서현</a></li>
+                                                <li><a href="/singer/34/singer_30715.html">이진성</a></li>
+                                                <li><a href="/singer/34/singer_30716.html">정동하</a></li>
+                                                <li><a href="/singer/34/singer_30717.html">투개월</a></li>
+                                                <li><a href="/singer/34/singer_30719.html">오현란</a></li>
+                                                <li><a href="/singer/34/singer_30720.html">이현</a></li>
+                                                <li><a href="/singer/34/singer_30728.html">이기찬</a></li>
+                                                <li><a href="/singer/34/singer_30729.html">난아진</a></li>
+                                                <li><a href="/singer/34/singer_30730.html">이정</a></li>
+                                                <li><a href="/singer/34/singer_30731.html">허가윤</a></li>
+                                                <li><a href="/singer/34/singer_30734.html">이수영</a></li>
+                                                <li><a href="/singer/34/singer_30737.html">김형준</a></li>
+                                                <li><a href="/singer/34/singer_30738.html">김범수</a></li>
+                                                <li><a href="/singer/34/singer_30739.html">김연우</a></li>
+                                                <li><a href="/singer/34/singer_30741.html">이영현</a></li>
+                                                <li><a href="/singer/34/singer_30743.html">이창민</a></li>
+                                                <li><a href="/singer/34/singer_30744.html">서인영</a></li>
+                                                <li><a href="/singer/34/singer_30756.html">휘성</a></li>
+                                                <li><a href="/singer/34/singer_30758.html">임재범</a></li>
+                                                <li><a href="/singer/34/singer_30760.html">노민우</a></li>
+                                                <li><a href="/singer/34/singer_30761.html">이민기</a></li>
+                                                <li><a href="/singer/34/singer_30763.html">양요섭</a></li>
+                                                <li><a href="/singer/34/singer_30765.html">환희</a></li>
+                                                <li><a href="/singer/34/singer_30772.html">이지혜</a></li>
+                                                <li><a href="/singer/98/singer_2013.html">2046</a></li>
+                                                            </ul>
+            </div>
+                    </div>
+    </div>
+
+    <link href="/v5/r4/style/suggest.css" rel="stylesheet" type="text/css"/>
+<script src="/v5/r4/js/suggest.js"></script>
+<div class="footer center">
+    <!--<p class="footlink"> <a href="/faq/etc/about.html">关于一听</a> |--> <a href="/faq/etc/copyright.html">版权声明</a> <!--| <a href="/faq/etc/recruit.html">诚聘英才</a> -->| <a href="/faq/etc/contact_us.html">联系我们</a> | <a href="http://d.1ting.com/">歌曲入库</a> | <a href="/faq/etc/history.html">历史合作</a> | <a href="/faq/etc/links.html">友情链接</a> | <a href="/faq/etc/help.html">帮助中心</a> <!--| <a href="https://h5.1ting.com">移动一听</a> </p>-->
+  <p class="copyright">&copy; 2003-2020   <a href="http://www.1ting.com" class="homepage">www.1ting.com</a> All Rights Reserved 沪ICP备19024260号-3</p>
+</div>
+
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F32c12acc9a2efc3fa896bb3ebcd47ee7' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src='//w.cnzz.com/c.php?id=30001746' language='JavaScript'></script>
+</div>    <!-- 广告位：左下角悬浮 -->
+    <script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '3221626',
+            container: s,
+            size: '300,250',
+            display: 'float'
+        });
+    })();
+    </script>
+
+    <!-- 广告位：富媒体补余 -->
+    <script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '2861847',
+            container: s,
+            size: '300,250',
+            display: 'float'
+        });
+    })();
+    </script>
+
+    <script id="bdshare_js" data="type=tools&amp;uid=14170" ></script>
+    <script id="bdshell_js"></script>
+    <script>
+    var bds_config = {
+        //'wbUid':1671108633,
+        'bdPopTitle':'一听音乐网',
+        'snsKey':{'tqq':'403a778463634ece8f0c75a66c4e230d', 'tsina':'1435846576'},            
+        'bdPic':'//img.1ting.com/images/singer/7416.jpg'
+            };
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+.singer_tag__item {
+  height: 26px;
+  line-height: 27px;
+  overflow: hidden;
+}
+.singer_tag__item {
+  float: left;
+  line-height: 26px;
+  padding: 0 8px;
+  margin: 0 12px 14px 0;
+}
+a {
+  color: #000;
+  cursor: pointer;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.singer_tag__list {
+  padding-bottom: 3px;
+  height: auto;
+  zoom: 1;
+  clear: both;
+  overflow: hidden;
+}
+
+.singer_tag__item--select, .singer_tag__item--select:hover {
+    background-color: #31c27c;
+    color: #fff;
+}
+
+.ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.singer_list_txt__item {
+    float: left;
+    width: 20%;
+}
+li {
+    list-style: none;
+}
