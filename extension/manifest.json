@@ -1,0 +1,17 @@
+{
+  "name": "ClickYoutube",
+  "version": "1.0.0",
+  "description": "shortcut youtube search with chinese singers",
+  "manifest_version": 3,
+  "author": "Tony Cheng",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "ClickYoutube",
+    "default_icon": {
+      "16": "images/s-16.png",
+      "24": "images/s-24.png",
+      "32": "images/s-32.png"
+    }
+  },
+  "icons": { "16": "images/s-16.png", "48": "images/s-48.png", "128": "images/s-128.png" }
+}

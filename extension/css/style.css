@@ -48,3 +48,8 @@ a:hover {
 li {
     list-style: none;
 }
+
+body{
+  width: 800px;
+  height: 600px;
+}
